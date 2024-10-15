@@ -91,7 +91,7 @@ const Quiz = () => {
   }
 
   return (
-    <div onKeyDown={handleAnswer(e)} className='flex flex-col h-screen items-center'>
+    <div onKeyDown={(e) => handleAnswer(e)} className='flex flex-col h-screen items-center'>
       <div className='w-screen px-8 md:px-36'>
         <Nav />
       </div>
