@@ -46,8 +46,12 @@ const Quiz = () => {
             const scoreSet = (problems.length % 10 == 0) ?
               problems.length / 10 - 1
               : 3;
-            handleScore(scoreSet);
-            navigate(`/quiz/score/${id}/${score}/${problems.length}/${quiz.scores[scoreSet]}`);
+            const copy = quiz;
+            copy.scores[scoreSet][score]++;
+            setQuiz(copy);
+            console.log(copy);
+            handleScore(copy);
+            navigate(`/quiz/score/${id}/${score}/${problems.length}/${copy.scores[scoreSet]}`);
           }
           setSubmit(false);
           setAnswer('');
@@ -67,11 +71,7 @@ const Quiz = () => {
     }
   }
 
-  const handleScore = (scoreSet) => {
-    const copy = JSON.parse(JSON.stringify(quiz));
-    copy.scores[scoreSet][score]++;
-    setQuiz(copy);
-    console.log(copy);
+  const handleScore = (copy) => {
     setLoading(true);
     axios
       .put(`https://guessquiz-9c9067408cb5.herokuapp.com/quiz/${id}`, copy,
