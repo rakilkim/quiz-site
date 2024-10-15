@@ -42,16 +42,16 @@ const Quiz = () => {
     if (answer) {
       if (e.type == "click" || e.code == "Enter") {
         if (submit) {
-          if (probNum + 1 == problems.length) {
-            const scoreSet = (problems.length % 10 == 0) ?
-              problems.length / 10 - 1
+          if (probNum + 1 == len) {
+            const scoreSet = (len % 10 == 0) ?
+              len / 10 - 1
               : 3;
             const copy = quiz;
             copy.scores[scoreSet][score]++;
             setQuiz(copy);
             console.log(copy);
             handleScore(copy);
-            navigate(`/quiz/score/${id}/${score}/${problems.length}/${copy.scores[scoreSet]}`);
+            navigate(`/quiz/score/${id}/${score}/${len}/${copy.scores[scoreSet]}`);
           }
           setSubmit(false);
           setAnswer('');
