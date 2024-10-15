@@ -91,7 +91,7 @@ const Quiz = () => {
   }
 
   return (
-    <div className='flex flex-col h-screen items-center'>
+    <div onKeyDown={handleAnswer(e)} className='flex flex-col h-screen items-center'>
       <div className='w-screen px-8 md:px-36'>
         <Nav />
       </div>
@@ -127,7 +127,6 @@ const Quiz = () => {
                   className='my-14 w-full ml-2 rounded-md
                            focus:outline-none focus:border-2 focus:border-lime-400' />
               )}
-
               <IoIosArrowDroprightCircle
                 onClick={(e) => handleAnswer(e)}
                 className='cursor-pointer my-14 ml-10 text-5xl text-lime-500' />
