@@ -123,9 +123,7 @@ const QuizInfo = () => {
             <div className='mt-1'>
               <span className=' text-gray-800'>Created By "{quiz.createdBy}"</span>
             </div>
-            <span className='text-sm text-gray-800'>Created: {new Date(quiz.createdAt).toString().substring(0, 16)}|
-              Last Modified: {new Date(quiz.updatedAt).toString().substring(0, 16)}
-            </span>
+            <span className='text-sm text-gray-800'>Created: {new Date(quiz.createdAt).toString().substring(0, 16)}</span>
             <span className='text-xs text-gray-800'>total {quiz.len} questions available</span>
           </div>
           <div className='flex'>
