@@ -20,7 +20,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get('https://guessquiz-9c9067408cb5.herokuapp.com/quiz')
+      .get('http://localhost:5555/quiz')
       .then((response) => {
         setQuizzes(response.data);
         console.log(response.data)

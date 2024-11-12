@@ -21,7 +21,7 @@ const QuizInfo = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://guessquiz-9c9067408cb5.herokuapp.com/quiz/${id}`)
+      .get(`http://localhost:5555/quiz/${id}`)
       .then((response) => {
         setQuiz(response.data);
         const len = response.data.len;
@@ -64,7 +64,7 @@ const QuizInfo = () => {
   const handleDelete = () => {
     setLoading(true);
     axios
-      .delete(`https://guessquiz-9c9067408cb5.herokuapp.com/quiz/${id}`)
+      .delete(`http://localhost:5555/quiz/${id}`)
       .then(() => {
         setLoading(false);
         navigate('/');
@@ -77,7 +77,7 @@ const QuizInfo = () => {
 
   return (
     <div className='px-4 flex flex-col items-center'>
-      <div className='flex justify-between items-center w-full px-4 md:px-32'>
+      <div className='flex justify-between items-center w-full px-8 md:px-32'>
         <Nav />
         {loading ? (
           <></>

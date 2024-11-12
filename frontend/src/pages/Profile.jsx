@@ -51,7 +51,7 @@ const Profile = () => {
     setLoading(true);
     if (username) {
       axios
-        .get(`https://guessquiz-9c9067408cb5.herokuapp.com/quiz/user/${username}`)
+        .get(`http://localhost:5555/quiz/user/${username}`)
         .then((response) => {
           setYourQuizzes(response.data);
           setLoading(false);

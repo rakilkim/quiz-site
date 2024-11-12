@@ -109,7 +109,7 @@ const Score = () => {
         </div>
       ) : (
         <div className='flex flex-col items-center'>
-          <div className='w-screen px-8 md:px-36'>
+          <div className='w-screen px-12 md:px-36'>
             <Nav />
           </div>
           <div

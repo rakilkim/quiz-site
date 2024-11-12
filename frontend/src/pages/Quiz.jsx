@@ -24,7 +24,7 @@ const Quiz = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://guessquiz-9c9067408cb5.herokuapp.com/quiz/${id}`)
+      .get(`http://localhost:5555/quiz/${id}`)
       .then((response) => {
         setQuiz(response.data);
         setProblems(response.data.questionsUrl.map((e, i) => {
@@ -74,7 +74,7 @@ const Quiz = () => {
   const handleScore = (copy) => {
     setLoading(true);
     axios
-      .put(`https://guessquiz-9c9067408cb5.herokuapp.com/quiz/${id}`, copy,
+      .put(`http://localhost:5555/quiz/${id}`, copy,
         {
           headers: {
             'Content-Type': 'application/json',
@@ -91,7 +91,7 @@ const Quiz = () => {
   }
 
   return (
-    <div onKeyDown={(e) => handleAnswer(e)} className='flex flex-col h-screen items-center'>
+    <div tabindex='-1' onKeyDown={(e) => handleAnswer(e)} className='flex flex-col h-screen items-center'>
       <div className='w-screen px-8 md:px-36'>
         <Nav />
       </div>

@@ -123,7 +123,7 @@ const CreateQuiz = () => {
 
     setLoading(true);
     axios
-      .post('https://guessquiz-9c9067408cb5.herokuapp.com/quiz', formData)
+      .post('http://localhost:5555', formData)
       .then(() => {
         setLoading(false);
         navigate('/');

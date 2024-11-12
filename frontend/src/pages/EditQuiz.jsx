@@ -57,7 +57,7 @@ const EditQuiz = () => {
     }
     fetchData();
     axios
-      .get(`https://guessquiz-9c9067408cb5.herokuapp.com/quiz/${id}`)
+      .get(`http://localhost:5555/quiz/${id}`) // https://guessquiz-9c9067408cb5.herokuapp.com/quiz/${id}
       .then((response) => {
         setQuiz(response.data);
         setName(response.data.name);
@@ -181,7 +181,7 @@ const EditQuiz = () => {
     formData.append("imageNames", imageNames);
     setLoading(true);
     axios
-      .put(`https://guessquiz-9c9067408cb5.herokuapp.com/quiz/${id}`, formData)
+      .put(`http://localhost:5555/quiz/${id}`, formData)
       .then(() => {
         setLoading(false);
         navigate('/');
